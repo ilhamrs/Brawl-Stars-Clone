@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject capsule;
 
-    float walkSpeed = 10f;
+    float walkSpeed = 5f;
 
     Vector3 moveDirection = Vector3.zero;
 

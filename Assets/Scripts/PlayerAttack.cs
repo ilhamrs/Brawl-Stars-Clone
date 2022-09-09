@@ -7,6 +7,8 @@ public class PlayerAttack : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject muzzlePosition;
 
+    [SerializeField] float fireRate;
+
     bool allowFire;
 
     // Start is called before the first frame update
@@ -23,7 +25,6 @@ public class PlayerAttack : MonoBehaviour
 
     public void Fire()
     {
-        //GameObject projectile = GameObject.Instantiate(projectilePrefab, muzzlePosition.transform.position, muzzlePosition.transform.rotation);
         if (allowFire)
         {
             StartCoroutine(spawnProjectile());
@@ -35,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
     {
         allowFire = false;
         GameObject projectile = GameObject.Instantiate(projectilePrefab, muzzlePosition.transform.position, muzzlePosition.transform.rotation);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(fireRate);
         allowFire = true;
     }
 }
