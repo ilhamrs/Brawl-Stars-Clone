@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    public GameObject muzzlePosition;
+    public GameObject[] muzzlePosition;
 
     [SerializeField] float fireRate;
 
@@ -35,7 +35,11 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator spawnProjectile()
     {
         allowFire = false;
-        GameObject projectile = GameObject.Instantiate(projectilePrefab, muzzlePosition.transform.position, muzzlePosition.transform.rotation);
+        for (int i= 0; i < muzzlePosition.Length; i++)
+        {
+            GameObject projectile = GameObject.Instantiate(projectilePrefab, muzzlePosition[i].transform.position, muzzlePosition[i].transform.rotation);
+        }
+        
         yield return new WaitForSeconds(fireRate);
         allowFire = true;
     }
