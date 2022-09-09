@@ -37,7 +37,7 @@ public class JoystickScript : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             joystickImage.rectTransform.anchoredPosition = new Vector2(inputDir.x * (bgImageSizeX / offset), inputDir.y * (bgImageSizeY / offset));
         }
 
-        Debug.Log(inputDir);
+        //Debug.Log(inputDir);
     }
 
     public void OnPointerDown(PointerEventData eventData)

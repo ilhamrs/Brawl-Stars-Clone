@@ -14,10 +14,13 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
 
     CharacterController characterController;
+
+    PlayerAttack playerAttack;
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        playerAttack = FindObjectOfType<PlayerAttack>();
     }
 
     // Update is called once per frame
@@ -42,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
         if (rightJoystick.inputDir != Vector2.zero)
         {
             capsule.transform.localEulerAngles = new Vector3(0f, Mathf.Atan2(rightJoystick.inputDir.x, rightJoystick.inputDir.y) * 180 / Mathf.PI, 0f);
+
+            playerAttack.Fire();
         }
 
     }
