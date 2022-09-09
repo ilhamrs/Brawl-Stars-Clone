@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        weapMode = 1;
+        weapMode = 0;
         switchWeap(weapMode);
     }
 

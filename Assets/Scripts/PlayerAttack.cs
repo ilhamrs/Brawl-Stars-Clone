@@ -17,6 +17,11 @@ public class PlayerAttack : MonoBehaviour
         allowFire = true;
     }
 
+    private void Awake()
+    {
+        allowFire = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,10 +30,13 @@ public class PlayerAttack : MonoBehaviour
 
     public void Fire()
     {
-        if (allowFire)
+        if (this.gameObject.activeInHierarchy)
         {
-            StartCoroutine(spawnProjectile());
-            Debug.Log("FIRE!");
+            if (allowFire)
+            {
+                StartCoroutine(spawnProjectile());
+                Debug.Log("FIRE!");
+            }
         }
     }
 
