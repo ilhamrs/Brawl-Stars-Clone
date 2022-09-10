@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        weapMode = 0;
+        weapMode = GameData.instance.weapMode;
         switchWeap(weapMode);
     }
 
