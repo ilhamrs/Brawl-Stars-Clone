@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerAttack = FindObjectOfType<PlayerAttack>();
+
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         float curSpeedX = walkSpeed * Input.GetAxis("Vertical");

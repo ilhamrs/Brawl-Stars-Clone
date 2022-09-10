@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject[] weapons;
     [SerializeField] Health playerHealth;
+    [SerializeField] Transform capsulePlayer;
 
     public TextMeshProUGUI healthText;
     int weapMode;
@@ -23,26 +24,28 @@ public class GameManager : MonoBehaviour
         healthText.text = playerHealth.currentHealth.ToString();
     }
 
-    public void ChangeWeapon()
-    {
-        weapMode++;
+    //public void ChangeWeapon()
+    //{
+    //    weapMode++;
         
-        weapMode = weapMode >= weapons.Length ? 0 : weapMode;
+    //    weapMode = weapMode >= weapons.Length ? 0 : weapMode;
 
-        switchWeap(weapMode);
-    }
+    //    switchWeap(weapMode);
+    //}
 
     void switchWeap(int mode)
     {
         for (int i = 0; i < weapons.Length; i++){
             if (i == mode)
             {
-                weapons[i].SetActive(true);
+                //weapons[i].SetActive(true);
+                GameObject go = Instantiate(weapons[i]);
+                go.transform.parent = capsulePlayer;
             }
-            else
-            {
-                weapons[i].SetActive(false);
-            }
+            //else
+            //{
+            //    weapons[i].SetActive(false);
+            //}
         }
     }
 
