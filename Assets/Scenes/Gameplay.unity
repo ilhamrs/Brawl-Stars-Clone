@@ -4296,6 +4296,8 @@ MonoBehaviour:
   weapons:
   - {fileID: 943347992}
   - {fileID: 1922665943}
+  playerHealth: {fileID: 936047691}
+  healthText: {fileID: 1544520114}
 --- !u!4 &2044211570
 Transform:
   m_ObjectHideFlags: 0

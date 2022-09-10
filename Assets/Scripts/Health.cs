@@ -64,5 +64,10 @@ public class Health : MonoBehaviour
         {
             takeDamage(1);
         }
+
+        if (other.tag == "Enemy" && isPlayer)
+        {
+            takeDamage(1);
+        }
     }
 }
