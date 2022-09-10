@@ -13,8 +13,10 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI targetHealthText;
+    public TextMeshProUGUI enemyLeftText;
     public GameObject GameOverPanel;
     int weapMode;
+    int enemyCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,15 +25,22 @@ public class GameManager : MonoBehaviour
         GameOverPanel.SetActive(false);
         Time.timeScale = 1;
 
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        Debug.Log(enemyCount);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length / 2;
+
         healthText.text = "Player Health: " + playerHealth.currentHealth.ToString();
         targetHealthText.text = "Target Health: " + targetHealth.currentHealth.ToString();
 
-        if (playerHealth.currentHealth <= 0 || targetHealth.currentHealth <= 0)
+        enemyLeftText.text = "Enemy Left: " + enemyCount.ToString();
+
+        if (playerHealth.currentHealth <= 0 || targetHealth.currentHealth <= 0 || enemyCount <= 0)
         {
             GameOver();
         }
