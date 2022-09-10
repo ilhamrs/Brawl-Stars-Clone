@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     {
         float distance = Vector3.Distance(player.transform.position, transform.position);
 
-        if (distance < 10 && distance > gap)
+        if (distance < 20 && distance > gap)
         {
             Vector3 pos = Vector3.MoveTowards(transform.position, player.position, 5 * Time.deltaTime);
 

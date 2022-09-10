@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,12 +13,16 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI targetHealthText;
+    public GameObject GameOverPanel;
     int weapMode;
     // Start is called before the first frame update
     void Start()
     {
         weapMode = GameData.instance.weapMode;
         switchWeap(weapMode);
+        GameOverPanel.SetActive(false);
+        Time.timeScale = 1;
+
     }
 
     // Update is called once per frame
@@ -25,6 +30,11 @@ public class GameManager : MonoBehaviour
     {
         healthText.text = "Player Health: " + playerHealth.currentHealth.ToString();
         targetHealthText.text = "Target Health: " + targetHealth.currentHealth.ToString();
+
+        if (playerHealth.currentHealth <= 0 || targetHealth.currentHealth <= 0)
+        {
+            GameOver();
+        }
     }
 
     //public void ChangeWeapon()
@@ -54,6 +64,18 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("GAME OVER!");
+        GameOverPanel.SetActive(true);
+        Time.timeScale = 0;
     }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Gameplay");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }
