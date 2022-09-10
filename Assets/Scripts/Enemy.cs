@@ -57,12 +57,13 @@ public class Enemy : MonoBehaviour
             enemyRb.velocity = Vector3.zero;
             enemyRb.angularVelocity = Vector3.zero;
 
-            if (isRange)
+            if (isRange && distance < gap)
             {
                 enemyFire.Fire();
                 transform.LookAt(player);
             }
-            else
+
+            if(!isRange)
             {
                 //StartCoroutine(Attack());
                 enemyAnim.SetBool("isMeleeAttack", true);

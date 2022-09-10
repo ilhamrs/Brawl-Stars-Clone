@@ -23,4 +23,20 @@ public class Projectile : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Wall")
+        {
+            DestroyProjectile();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Wall")
+        {
+            DestroyProjectile();
+        }
+    }
 }
