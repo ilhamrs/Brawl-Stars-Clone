@@ -28,20 +28,20 @@ public class EnemyFire : MonoBehaviour
 
     public void Fire()
     {
-        if (allowFire)
-        {
-            StartCoroutine(spawnProjectile());
-            Debug.Log("FIRE!");
-        }
-
-        //if (this.gameObject.activeInHierarchy)
+        //if (allowFire)
         //{
-        //    if (allowFire)
-        //    {
-        //        StartCoroutine(spawnProjectile());
-        //        Debug.Log("FIRE!");
-        //    }
+        //    StartCoroutine(spawnProjectile());
+        //    Debug.Log("FIRE!");
         //}
+
+        if (this.gameObject.activeInHierarchy)
+        {
+            if (allowFire)
+            {
+                StartCoroutine(spawnProjectile());
+                Debug.Log("FIRE!");
+            }
+        }
     }
 
     IEnumerator spawnProjectile()

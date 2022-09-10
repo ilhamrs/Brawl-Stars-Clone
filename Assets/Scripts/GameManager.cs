@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject[] weapons;
     [SerializeField] Health playerHealth;
+    [SerializeField] Health targetHealth;
     [SerializeField] Transform capsulePlayer;
 
     public TextMeshProUGUI healthText;
+    public TextMeshProUGUI targetHealthText;
     int weapMode;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = playerHealth.currentHealth.ToString();
+        healthText.text = "Player Health: " + playerHealth.currentHealth.ToString();
+        targetHealthText.text = "Target Health: " + targetHealth.currentHealth.ToString();
     }
 
     //public void ChangeWeapon()
