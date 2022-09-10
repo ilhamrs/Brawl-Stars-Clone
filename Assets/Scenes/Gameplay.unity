@@ -718,7 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7f82b076cf4724d96a69ae333e861b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 7162486430206419405, guid: 46625935a75552044b416e4e93fcbbc5, type: 3}
+  projectilePrefab: {fileID: 7162486430206419405, guid: 1e2cd0ea0da71bf449fd63cd9db6363d, type: 3}
   muzzlePosition: {fileID: 2019548538}
   fireRate: 1
   enemy: {fileID: 584851487}
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7f82b076cf4724d96a69ae333e861b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 7162486430206419405, guid: 46625935a75552044b416e4e93fcbbc5, type: 3}
+  projectilePrefab: {fileID: 7162486430206419405, guid: 1e2cd0ea0da71bf449fd63cd9db6363d, type: 3}
   muzzlePosition: {fileID: 172487479}
   fireRate: 1
   enemy: {fileID: 1154969496}
@@ -1427,6 +1427,7 @@ GameObject:
   - component: {fileID: 584851488}
   - component: {fileID: 584851487}
   - component: {fileID: 584851489}
+  - component: {fileID: 584851490}
   m_Layer: 0
   m_Name: Enemy Melee
   m_TagString: Enemy
@@ -1562,6 +1563,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &584851490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584851482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e740f245ee8fdfd4097e5b0bdbe936c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  isPlayer: 0
 --- !u!1 &610139525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,6 +2012,7 @@ GameObject:
   - component: {fileID: 936047689}
   - component: {fileID: 936047688}
   - component: {fileID: 936047687}
+  - component: {fileID: 936047691}
   m_Layer: 0
   m_Name: capsule
   m_TagString: Player
@@ -2085,6 +2101,20 @@ Transform:
   m_Father: {fileID: 1592017603}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &936047691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936047686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e740f245ee8fdfd4097e5b0bdbe936c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 10
+  isPlayer: 1
 --- !u!1 &943347992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,6 +2810,7 @@ GameObject:
   - component: {fileID: 1154969497}
   - component: {fileID: 1154969496}
   - component: {fileID: 1154969495}
+  - component: {fileID: 1154969502}
   m_Layer: 0
   m_Name: Enemy Range
   m_TagString: Enemy
@@ -2915,6 +2946,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1154969502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154969494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e740f245ee8fdfd4097e5b0bdbe936c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  isPlayer: 0
 --- !u!1 &1182697021
 GameObject:
   m_ObjectHideFlags: 0
