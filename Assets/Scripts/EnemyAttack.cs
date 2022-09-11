@@ -6,9 +6,6 @@ public class EnemyAttack : MonoBehaviour
 {
     Transform player;
     Rigidbody enemyRb;
-    //bool isAttacking;
-    EnemyFire enemyFire;
-
     Animator enemyAnim;
 
     public bool isRange;
@@ -17,22 +14,8 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Target").GetComponent<Transform>();
-        enemyFire = FindObjectOfType<EnemyFire>();
         enemyRb = GetComponent<Rigidbody>();
-        //isAttacking = false;
-
         enemyAnim = GetComponent<Animator>();
-
-        //if (!isRange)
-        //{
-            
-        //    gap = 3f;
-        //}
-        //else
-        //{
-        //    gap = 5f;
-        //}
-
     }
 
     // Update is called once per frame
@@ -56,36 +39,6 @@ public class EnemyAttack : MonoBehaviour
 
             enemyAnim.SetBool("isMeleeAttack", false);
         }
-
-        //if (distance < 10 && distance > gap)
-        //{
-            
-
-        //    if (!isRange)
-        //    {
-                
-        //    }
-        //}
-        //else
-        //{
-
-            
-
-        //    if (isRange && distance < gap)
-        //    {
-        //        enemyFire.Fire();
-        //        transform.LookAt(player);
-        //    }
-
-        //    if (!isRange)
-        //    {
-        //        //StartCoroutine(Attack());
-                
-
-        //    }
-
-        //}
-
     }
 
     private void OnTriggerEnter(Collider other)

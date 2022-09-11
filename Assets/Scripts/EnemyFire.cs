@@ -11,29 +11,14 @@ public class EnemyFire : MonoBehaviour
 
     bool allowFire;
 
-    [SerializeField] Enemy enemy;
-
     // Start is called before the first frame update
     void Start()
     {
         allowFire = true;
-        enemy = GetComponent<Enemy>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Fire()
     {
-        //if (allowFire)
-        //{
-        //    StartCoroutine(spawnProjectile());
-        //    Debug.Log("FIRE!");
-        //}
-
         if (this.gameObject.activeInHierarchy)
         {
             if (allowFire)

@@ -10,8 +10,6 @@ public class Health : MonoBehaviour
 
     GameManager gameManager;
 
-    //private Animator anim;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +19,6 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = startingHealth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void takeDamage(float damage)

@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
 {
     Transform player;
     Rigidbody enemyRb;
-    //bool isAttacking;
     EnemyFire enemyFire;
 
     Animator enemyAnim;
@@ -19,7 +18,6 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Transform>();
         enemyFire = FindObjectOfType<EnemyFire>();
         enemyRb = GetComponent<Rigidbody>();
-        //isAttacking = false;
 
         if (!isRange)
         {
@@ -53,7 +51,6 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            
             enemyRb.velocity = Vector3.zero;
             enemyRb.angularVelocity = Vector3.zero;
 
@@ -65,32 +62,10 @@ public class Enemy : MonoBehaviour
 
             if(!isRange)
             {
-                //StartCoroutine(Attack());
                 enemyAnim.SetBool("isMeleeAttack", true);
-
             }
-            
         }
-        
     }
-
-    //IEnumerator Attack()
-    //{
-    //    Vector3 lastPos = player.position;
-        
-    //    yield return new WaitForSeconds(1f);
-    //    Vector3 pos = Vector3.MoveTowards(transform.position, lastPos, 20 * Time.deltaTime);
-    //    transform.LookAt(player);
-    //    enemyRb.MovePosition(pos);
-    //    yield return new WaitForSeconds(1f);
-
-    //    Destroy(this.gameObject);
-
-    //    //Vector3 pos2 = Vector3.MoveTowards(transform.position, -player.position, 50 * Time.deltaTime);
-    //    //enemyRb.MovePosition(pos);
-    //    //yield return new WaitForSeconds(3f);
-    //    //isAttacking = false;
-    //}
 
     private void OnTriggerEnter(Collider other)
     {

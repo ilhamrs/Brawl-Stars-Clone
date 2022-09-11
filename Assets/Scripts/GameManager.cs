@@ -46,28 +46,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //public void ChangeWeapon()
-    //{
-    //    weapMode++;
-        
-    //    weapMode = weapMode >= weapons.Length ? 0 : weapMode;
-
-    //    switchWeap(weapMode);
-    //}
-
     void switchWeap(int mode)
     {
         for (int i = 0; i < weapons.Length; i++){
             if (i == mode)
             {
-                //weapons[i].SetActive(true);
                 GameObject go = Instantiate(weapons[i]);
                 go.transform.parent = capsulePlayer;
             }
-            //else
-            //{
-            //    weapons[i].SetActive(false);
-            //}
         }
     }
 
